@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLB Tin Học</title>
+
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-bracket">[</span>
+      <span class="loader-text">LOADING</span>
+      <span class="loader-bracket">]</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>CLB<span class="logo-accent">TH</span><span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+        <li><a href="#achievements" class="nav-link" data-section="achievements">Thành tích</a></li>
+        <li><a href="#departments" class="nav-link" data-section="departments">Các ban</a></li>
+        <li><a href="#events" class="nav-link" data-section="events">Sự kiện</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Liên hệ</a></li>
+        <li><a href="/quizapp" class="nav-link nav-quiz"><i class="fa-solid fa-bolt"></i> Quiz</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero">
+    <!-- Particle canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Grid overlay -->
+    <div class="hero-grid"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span> Đang hoạt động · Năm học 2024–2025
+      </div>
+      <h1 class="hero-title reveal">
+        <span class="title-line">CLB</span>
+        <span class="title-line title-accent">Tin Học</span>
+      </h1>
+      <p class="hero-slogan reveal">Nơi đam mê công nghệ hội tụ</p>
+      <div class="hero-cta reveal">
+        <a href="#achievements" class="btn btn-primary">
+          Xem thành tích <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#departments" class="btn btn-ghost">Các ban của CLB</a>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Ban hoạt động</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Giải thưởng</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Thành viên</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Cuộn xuống</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ========== ACHIEVEMENTS ========== -->
+  <section id="achievements">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 01</span>
+        <h2 class="section-title">Thành tích <span class="accent">nổi bật</span></h2>
+        <p class="section-sub">Những giải thưởng CLB tự hào đạt được trong các năm qua</p>
+      </div>
+
+      <div class="achievements-grid">
+
+        <!-- Card 1: HSG -->
+        <div class="ach-card reveal">
+          <div class="ach-card-top">
+            <div class="ach-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div class="ach-badge">HSG 2024–2025</div>
+          </div>
+          <h3 class="ach-title">Học sinh giỏi cấp tỉnh</h3>
+          <ul class="ach-members">
+            <li>
+              <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+              <span>Mai Lộc Phúc Thịnh</span>
+            </li>
+            <li>
+              <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+              <span>Trần Quang Thịnh</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Olympic 11 -->
+        <div class="ach-card reveal">
+          <div class="ach-card-top">
+            <div class="ach-icon ach-icon--silver"><i class="fa-solid fa-medal"></i></div>
+            <div class="ach-badge ach-badge--silver">Olympic Tin học 11</div>
+          </div>
+          <h3 class="ach-title">2 Giải Ba Olympic</h3>
+          <ul class="ach-members">
+            <li>
+              <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+              <span>Lâm Gia Tín</span>
+            </li>
+            <li>
+              <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+              <span>Đào Công Thiện</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Olympic 10 -->
+        <div class="ach-card reveal">
+          <div class="ach-card-top">
+            <div class="ach-icon ach-icon--gold"><i class="fa-solid fa-crown"></i></div>
+            <div class="ach-badge ach-badge--gold">Olympic Tin học 10</div>
+          </div>
+          <h3 class="ach-title">2 Giải Nhất Olympic</h3>
+          <ul class="ach-members">
+            <li>
+              <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+              <span>Đinh Trọng Tấn</span>
+            </li>
+            <li>
+              <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+              <span>Trần Minh Luân</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Tin học trẻ -->
+        <div class="ach-card reveal">
+          <div class="ach-card-top">
+            <div class="ach-icon ach-icon--purple"><i class="fa-solid fa-star"></i></div>
+            <div class="ach-badge ach-badge--purple">Tin học trẻ 2024–2025</div>
+          </div>
+          <h3 class="ach-title">Giải Ba cấp TP</h3>
+          <ul class="ach-members">
+            <li>
+              <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+              <span>Lâm Gia Tín</span>
+            </li>
+            <li>
+              <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+              <span>Châu Chí Phong</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 5: Olympic 11 2023-2024 -->
+        <div class="ach-card reveal">
+          <div class="ach-card-top">
+            <div class="ach-icon ach-icon--silver"><i class="fa-solid fa-medal"></i></div>
+            <div class="ach-badge ach-badge--silver">Olympic 11 · 2023–2024</div>
+          </div>
+          <h3 class="ach-title">Olympic Tin học khối 11</h3>
+          <ul class="ach-members">
+            <li>
+              <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+              <span>Nguyễn Minh Khang</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 6: Robotacon -->
+        <div class="ach-card reveal">
+          <div class="ach-card-top">
+            <div class="ach-icon ach-icon--cyan"><i class="fa-solid fa-robot"></i></div>
+            <div class="ach-badge ach-badge--cyan">Robotacon QG 2023–2024</div>
+          </div>
+          <h3 class="ach-title">Robotacon Quốc Gia</h3>
+          <ul class="ach-members">
+            <li>
+              <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+              <span>Đào Công Thiện</span>
+            </li>
+            <li>
+              <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+              <span>Nguyễn Hùng Long</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DEPARTMENTS ========== -->
+  <section id="departments">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 02</span>
+        <h2 class="section-title">Các <span class="accent">ban</span> của CLB</h2>
+        <p class="section-sub">Mỗi ban là một thế giới riêng — cùng nhau tạo nên CLB hoàn chỉnh</p>
+      </div>
+
+      <div class="dept-grid">
+
+        <!-- Web -->
+        <div class="dept-card reveal">
+          <div class="dept-card-header dept-web">
+            <div class="dept-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="dept-glow dept-glow--web"></div>
+          </div>
+          <div class="dept-card-body">
+            <div class="dept-leader">
+              <div class="leader-avatar"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="leader-info">
+                <span class="leader-role">Leader</span>
+                <span class="leader-name">Ban Web</span>
+              </div>
+            </div>
+            <h3 class="dept-name">Ban Web</h3>
+            <p class="dept-desc">Thiết kế và phát triển website, web app từ front-end đến back-end. Vibe: chill nhưng deadline không chill.</p>
+            <div class="dept-tags">
+              <span>HTML/CSS</span><span>JavaScript</span><span>Node.js</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Robotics -->
+        <div class="dept-card reveal">
+          <div class="dept-card-header dept-robot">
+            <div class="dept-icon"><i class="fa-solid fa-robot"></i></div>
+            <div class="dept-glow dept-glow--robot"></div>
+          </div>
+          <div class="dept-card-body">
+            <div class="dept-leader">
+              <div class="leader-avatar"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="leader-info">
+                <span class="leader-role">Leader</span>
+                <span class="leader-name">Ban Robotics</span>
+              </div>
+            </div>
+            <h3 class="dept-name">Ban Robotics</h3>
+            <p class="dept-desc">Lập trình robot, tham gia các cuộc thi Robotacon trong nước và quốc tế. Vibe: tinkerer, problem-solver, không ngại bẩn tay.</p>
+            <div class="dept-tags">
+              <span>Arduino</span><span>C/C++</span><span>Robotacon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Algorithm -->
+        <div class="dept-card reveal">
+          <div class="dept-card-header dept-algo">
+            <div class="dept-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="dept-glow dept-glow--algo"></div>
+          </div>
+          <div class="dept-card-body">
+            <div class="dept-leader">
+              <div class="leader-avatar"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="leader-info">
+                <span class="leader-role">Leader</span>
+                <span class="leader-name">Ban Thuật toán</span>
+              </div>
+            </div>
+            <h3 class="dept-name">Ban Thuật toán</h3>
+            <p class="dept-desc">Nghiên cứu, luyện tập thuật toán và cấu trúc dữ liệu, chuẩn bị cho HSG và Olympic tin học. Vibe: deep thinker, yêu AC.</p>
+            <div class="dept-tags">
+              <span>C++</span><span>Python</span><span>OI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media -->
+        <div class="dept-card reveal">
+          <div class="dept-card-header dept-media">
+            <div class="dept-icon"><i class="fa-solid fa-camera"></i></div>
+            <div class="dept-glow dept-glow--media"></div>
+          </div>
+          <div class="dept-card-body">
+            <div class="dept-leader">
+              <div class="leader-avatar"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="leader-info">
+                <span class="leader-role">Leader</span>
+                <span class="leader-name">Ban Media</span>
+              </div>
+            </div>
+            <h3 class="dept-name">Ban Media</h3>
+            <p class="dept-desc">Quay phim, chụp ảnh, dựng video cho các sự kiện của CLB. Vibe: creative, luôn cầm máy, sống chết với màu sắc.</p>
+            <div class="dept-tags">
+              <span>Premiere</span><span>Lightroom</span><span>Content</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design -->
+        <div class="dept-card reveal">
+          <div class="dept-card-header dept-design">
+            <div class="dept-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+            <div class="dept-glow dept-glow--design"></div>
+          </div>
+          <div class="dept-card-body">
+            <div class="dept-leader">
+              <div class="leader-avatar"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="leader-info">
+                <span class="leader-role">Leader</span>
+                <span class="leader-name">Ban Design</span>
+              </div>
+            </div>
+            <h3 class="dept-name">Ban Design</h3>
+            <p class="dept-desc">Thiết kế poster, banner, UI/UX cho các dự án của CLB. Vibe: pixel-perfect, mê Figma, aesthetic không khoan nhượng.</p>
+            <div class="dept-tags">
+              <span>Figma</span><span>Illustrator</span><span>UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EVENTS ========== -->
+  <section id="events">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 03</span>
+        <h2 class="section-title">Sự kiện <span class="accent">gần đây</span></h2>
+        <p class="section-sub">Cập nhật những hoạt động mới nhất từ CLB</p>
+      </div>
+
+      <div class="events-layout">
+        <!-- Featured Event -->
+        <div class="event-featured reveal">
+          <div class="event-featured-img">
+            <div class="event-placeholder-img">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span>Ảnh sự kiện</span>
+            </div>
+            <div class="event-label">Mới nhất</div>
+          </div>
+          <div class="event-featured-body">
+            <span class="event-date"><i class="fa-regular fa-clock"></i> 2024–2025</span>
+            <h3>Cuộc thi Olympic Tin học cấp trường</h3>
+            <p>Sân chơi thường niên dành cho các bạn yêu thích lập trình thuật toán, là bước đệm chuẩn bị cho các kỳ thi cấp tỉnh và cấp quốc gia.</p>
+            <a href="https://facebook.com" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fa-brands fa-facebook"></i> Xem trên Facebook
+            </a>
+          </div>
+        </div>
+
+        <!-- Event list -->
+        <div class="events-list">
+          <div class="event-item reveal">
+            <div class="event-item-dot"></div>
+            <div class="event-item-body">
+              <span class="event-item-date">2024–2025</span>
+              <h4>Robotacon Quốc Gia</h4>
+              <p>CLB tham dự cuộc thi Robotacon cấp quốc gia với thành tích xuất sắc.</p>
+              <a href="https://facebook.com" target="_blank" class="event-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="event-item reveal">
+            <div class="event-item-dot"></div>
+            <div class="event-item-body">
+              <span class="event-item-date">2024–2025</span>
+              <h4>Cuộc thi Tin học trẻ TP</h4>
+              <p>Thành viên CLB đạt giải Ba cấp thành phố tại cuộc thi Tin học trẻ.</p>
+              <a href="https://facebook.com" target="_blank" class="event-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="event-item reveal">
+            <div class="event-item-dot"></div>
+            <div class="event-item-body">
+              <span class="event-item-date">2023–2024</span>
+              <h4>Workshop Lập trình Web cơ bản</h4>
+              <p>Workshop nội bộ giới thiệu HTML, CSS, JavaScript cho thành viên mới.</p>
+              <a href="https://facebook.com" target="_blank" class="event-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <a href="https://facebook.com" target="_blank" class="btn btn-ghost btn-sm reveal">
+            <i class="fa-brands fa-facebook"></i> Xem tất cả sự kiện
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 04</span>
+        <h2 class="section-title">Liên <span class="accent">hệ</span></h2>
+        <p class="section-sub">Muốn tham gia hoặc hợp tác? Đừng ngại liên hệ với chúng mình!</p>
+      </div>
+
+      <div class="contact-wrapper reveal">
+        <div class="contact-card">
+          <div class="contact-card-glow"></div>
+
+          <div class="contact-info">
+            <a href="mailto:clbtinhoc@school.edu.vn" class="contact-item">
+              <div class="contact-icon contact-icon--email">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">clbtinhoc@school.edu.vn</span>
+              </div>
+              <i class="fa-solid fa-arrow-right contact-arrow"></i>
+            </a>
+
+            <a href="https://facebook.com" target="_blank" class="contact-item">
+              <div class="contact-icon contact-icon--fb">
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">Facebook</span>
+                <span class="contact-value">CLB Tin Học</span>
+              </div>
+              <i class="fa-solid fa-arrow-right contact-arrow"></i>
+            </a>
+          </div>
+
+          <div class="contact-cta">
+            <p>Tham gia CLB để cùng nhau học hỏi, phát triển và chinh phục những thử thách công nghệ!</p>
+            <a href="https://facebook.com" target="_blank" class="btn btn-primary">
+              <i class="fa-brands fa-facebook"></i> Nhắn tin cho chúng mình
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>CLB<span class="logo-accent">TH</span><span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-copy">© 2025 CLB Tin Học · Built with <i class="fa-solid fa-heart"></i> by members</p>
+      <div class="footer-links">
+        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

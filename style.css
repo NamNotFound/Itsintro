@@ -588,10 +588,31 @@ section:not(#hero) {
    ============================================================ */
 #departments { background: var(--bg-base); }
 
-.dept-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+.dept-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 4px 0 10px;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.dept-track {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  will-change: transform;
+  animation: deptMarquee 28s linear infinite;
+}
+.dept-set {
+  display: flex;
+  align-items: stretch;
   gap: 20px;
+  padding-right: 20px;
+  flex-shrink: 0;
+}
+
+@keyframes deptMarquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
 
 .dept-card {
@@ -599,8 +620,11 @@ section:not(#hero) {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+  width: 260px;
+  flex: 0 0 260px;
   transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
+.dept-marquee:hover .dept-track { animation-play-state: paused; }
 .dept-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-5px);
@@ -989,15 +1013,22 @@ section:not(#hero) {
   /* Achievements grid */
   .achievements-grid { grid-template-columns: 1fr; }
 
-  /* Departments */
-  .dept-grid { grid-template-columns: 1fr 1fr; }
+  .dept-track { animation-duration: 22s; }
+  .dept-card {
+    width: min(78vw, 250px);
+    flex-basis: min(78vw, 250px);
+  }
 
   /* Contact */
   .contact-card { padding: 24px 20px; }
 }
 
 @media (max-width: 480px) {
-  .dept-grid { grid-template-columns: 1fr; }
+  .dept-track { animation-duration: 20s; }
+  .dept-card {
+    width: min(84vw, 235px);
+    flex-basis: min(84vw, 235px);
+  }
 
   .hero-cta { flex-direction: column; align-items: center; }
   .hero-cta .btn { width: 100%; justify-content: center; }
@@ -1005,4 +1036,8 @@ section:not(#hero) {
   .footer-inner { flex-direction: column; text-align: center; }
 
   section:not(#hero) { padding: 72px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dept-track { animation: none; }
 }

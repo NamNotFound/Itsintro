@@ -160,6 +160,21 @@ navLinksEl.querySelectorAll('a').forEach(link => {
 });
 
 
+/* ── DEPARTMENTS MARQUEE: clone one set for seamless loop ── */
+(function initDepartmentsMarquee() {
+  const track = document.getElementById('deptTrack');
+  const set = document.getElementById('deptSet');
+  if (!track || !set || track.dataset.ready === 'true') return;
+
+  const clone = set.cloneNode(true);
+  clone.removeAttribute('id');
+  clone.setAttribute('aria-hidden', 'true');
+  clone.querySelectorAll('.reveal').forEach(el => el.classList.remove('reveal'));
+  track.appendChild(clone);
+  track.dataset.ready = 'true';
+})();
+
+
 /* ── SCROLL REVEAL ── */
 const revealEls = document.querySelectorAll('.reveal');
 

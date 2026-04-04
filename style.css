@@ -30,8 +30,8 @@
   --border:        rgba(0, 229, 255, 0.1);
   --border-hover:  rgba(0, 229, 255, 0.35);
 
-  --font-display:  'Be Vietnam Pro', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-body:     'Be Vietnam Pro', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display:  "Be Vietnam Pro", sans-serif;;
+  --font-body:     "Be Vietnam Pro", sans-serif;;
 
   --nav-h:         68px;
   --radius:        14px;

@@ -174,6 +174,20 @@ navLinksEl.querySelectorAll('a').forEach(link => {
   track.dataset.ready = 'true';
 })();
 
+/* ── ACHIEVEMENTS MARQUEE: clone one set for seamless loop ── */
+(function initAchievementsMarquee() {
+  const track = document.getElementById('achTrack');
+  const set = document.getElementById('achSet');
+  if (!track || !set || track.dataset.ready === 'true') return;
+
+  const clone = set.cloneNode(true);
+  clone.removeAttribute('id');
+  clone.setAttribute('aria-hidden', 'true');
+  clone.querySelectorAll('.reveal').forEach(el => el.classList.remove('reveal'));
+  track.appendChild(clone);
+  track.dataset.ready = 'true';
+})();
+
 
 /* ── SCROLL REVEAL ── */
 const revealEls = document.querySelectorAll('.reveal');

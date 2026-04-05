@@ -485,9 +485,39 @@ section:not(#hero) {
 #achievements { background: var(--bg-surface); }
 
 .achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  align-items: stretch;
   gap: 20px;
+  padding-right: 20px;
+  flex-shrink: 0;
+}
+
+.ach-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 4px 0 10px;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.ach-track {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  will-change: transform;
+  animation: achMarquee 34s linear infinite;
+}
+
+@keyframes achMarquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.ach-marquee:hover .ach-track { animation-play-state: paused; }
+
+.achievements-grid .ach-card {
+  width: 330px;
+  flex: 0 0 330px;
 }
 
 .ach-card {
@@ -1010,8 +1040,11 @@ section:not(#hero) {
   /* Hero stats */
   .hero-stats { gap: 20px; padding: 18px 24px; flex-wrap: wrap; }
 
-  /* Achievements grid */
-  .achievements-grid { grid-template-columns: 1fr; }
+  .ach-track { animation-duration: 30s; }
+  .achievements-grid .ach-card {
+    width: min(84vw, 320px);
+    flex-basis: min(84vw, 320px);
+  }
 
   .dept-track { animation-duration: 22s; }
   .dept-card {
@@ -1024,6 +1057,12 @@ section:not(#hero) {
 }
 
 @media (max-width: 480px) {
+  .ach-track { animation-duration: 26s; }
+  .achievements-grid .ach-card {
+    width: min(90vw, 300px);
+    flex-basis: min(90vw, 300px);
+  }
+
   .dept-track { animation-duration: 20s; }
   .dept-card {
     width: min(84vw, 235px);
@@ -1039,5 +1078,6 @@ section:not(#hero) {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .ach-track { animation: none; }
   .dept-track { animation: none; }
 }
